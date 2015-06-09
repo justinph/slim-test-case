@@ -1,0 +1,24 @@
+{
+    "name": "justinph/slim-test-case",
+    "description": "A test case for issues with slim-test-helpers.",
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "there4/slim-test-helpers": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Justin Heideman",
+            "email": "jheideman@mpr.org"
+        }
+    ],
+    "version": "0.1",
+    "type": "library",
+    "autoload": {
+        "psr-4": {"APM\\": "lib/"}
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "slim/slim": "~2.6",
+        "slim/views": "0.1.*"
+    }
+}
