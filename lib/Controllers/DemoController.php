@@ -6,8 +6,8 @@ use \Slim\Slim;
 class DemoController
 {
 
-    function __construct() {
-        $this->app = Slim::getInstance();
+    function __construct($app) {
+        $this->app = $app;
     }
 
     public function shouldTwoHundred($slug){
