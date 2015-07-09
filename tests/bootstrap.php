@@ -31,10 +31,14 @@ class LocalWebTestCase extends WebTestCase {
         };
 
 
-        $app->get('/demo200(/:slug+)', '\APM\Controllers\DemoController:shouldTwoHundred');
+        $demoController = new \APM\Controllers\DemoController();
 
-        $app->get('/demo404(/:slug+)', '\APM\Controllers\DemoController:shouldFourOhFour');
-          
+        $app->get('/demo200(/:slug+)', function ($slug) use ($app, $demoController) {
+            $demoController->shouldTwoHundred($slug);
+        });
+        $app->get('/demo404(/:slug+)', function ($slug) use ($app, $demoController) {
+            $demoController->shouldFourOhFour($slug);
+        });
 
         error_reporting(E_ALL);
         return $app;
