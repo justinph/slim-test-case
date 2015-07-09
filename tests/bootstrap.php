@@ -31,7 +31,7 @@ class LocalWebTestCase extends WebTestCase {
         };
 
 
-        $demoController = new \APM\Controllers\DemoController();
+        $demoController = new \APM\Controllers\DemoController($app);
 
         $app->get('/demo200(/:slug+)', function ($slug) use ($app, $demoController) {
             $demoController->shouldTwoHundred($slug);
